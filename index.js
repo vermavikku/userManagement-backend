@@ -8,10 +8,10 @@ const app = express();
 
 // Configure CORS
 const corsOptions = {
-  origin: "http://localhost:3039", // Adjust this to your frontend URL
+  origin: "https://voluble-brioche-d9f415.netlify.app",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "*",
-  credentials: true, // Include this if you need to support cookies and authorization headers
+  credentials: true,
 };
 
 // Use CORS middleware with options

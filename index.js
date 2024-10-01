@@ -8,7 +8,7 @@ const app = express();
 
 // Configure CORS
 const corsOptions = {
-  origin: "*", // Adjust this to your frontend URL
+  origin: "http://localhost:3039", // Adjust this to your frontend URL
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["X-Requested-With", "Authorization", "Role"],
   credentials: true, // Include this if you need to support cookies and authorization headers

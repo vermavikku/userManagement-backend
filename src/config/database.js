@@ -21,7 +21,9 @@ const initializeDatabase = async () => {
     console.log("Connected to MySQL without specifying database");
 
     // Create the database if it doesn't exist
-    await connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME}`);
+    await connection.query(
+      `CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME}`
+    );
     console.log("Database created or already exists: " + process.env.DB_NAME);
 
     // Reconnect using the new database
@@ -80,7 +82,7 @@ const initializeDatabase = async () => {
 
     const defaultUserQuery = `
       INSERT INTO users (user_name, password, email, mobile_number, role) 
-      VALUES ('root', '${password}', 'admin@123', '8888888888', 'admin') 
+      VALUES ('root', '${password}', 'admin@gmail.com', '8888888888', 'admin') 
       ON DUPLICATE KEY UPDATE
           password = VALUES(password),
           role = VALUES(role);
@@ -88,7 +90,6 @@ const initializeDatabase = async () => {
 
     await connection.query(defaultUserQuery);
     console.log("Default user inserted or updated");
-
   } catch (err) {
     console.error("Error:", err);
   } finally {
